@@ -10,23 +10,19 @@ symbols_count = int(input("How many symbols would you like?\n"))
 
 numbers_count = int(input("How many numbers would you like?\n"))
 
-str_l = ""
-str_s = ""
-str_n = ""
+password = ""
 
 for l in range(1,letters_count+1):
     l = letters[random.randint(0,len(letters)-1)]
-    str_l += l
+    password += l
 
 for s in range(1,symbols_count+1):
     s = symbols[random.randint(0,len(symbols)-1)]
-    str_s += s
+    password += s
 
 for n in range(1,numbers_count+1):
-    n = numbers[random.randint(0,len(numbers)-1)]
-    str_n += n
+    password += random.choice(numbers)
     
-password = str_l + str_s + str_n
 
 ran_pass = list(password)
 random.shuffle(ran_pass)
